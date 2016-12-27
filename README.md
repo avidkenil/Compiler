@@ -5,16 +5,24 @@ There were total 4 assignemnts in this lab.
 
 #Assignment 1
 Designed a simple grammer with the following features:
+
 	(i)		assignments, id := expr
+	
 	(ii)	condistions, if expr then expr2
+	
 	(iii)	loop, while expr do stmt
+	
 	(iv)	compound statement, begin opt_stmts end
+	
 	(v)		Arithmetic and relational operator.
+	
 And developed a simple compiler that generates x85 code.
 
 
 #Assignment 2
+
 Part(a)	Write a C code to convert a regular expression into minimised DFA.
+
 Part(b) Write a Grammer for the compiler and do its lexical analysis.
 
 #Assignment 3

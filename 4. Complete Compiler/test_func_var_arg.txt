@@ -1,0 +1,9 @@
+int func(int a, char b)
+{
+	
+	a:= a+b;
+	return a;
+}
+
+int ans;
+ans:=func(5,'a');

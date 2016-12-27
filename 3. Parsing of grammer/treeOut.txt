@@ -1,0 +1,16 @@
+(S1, "1") 
+(S, "2") 
+(func_defn, "4") (S, "2") 
+(func_decl, "5") (BEGIN1: "begin", "0") (func_stmt, "2") (end, "1") (stmt, "5")  S ( 1 ) 
+(datatype, "1") (ID: "funcName", "0") (LP: "(", "0") (opt_arg_list, "1") (rp, "1") (stmt, "5") (func_stmt, "2")  (error production) (ID: "i", "0") (colon, "1") (ASSIGN: "=", "0") (expr, "2") (semi, "1")  epsilon 
+(CHAR: "char", "0") (arg_list, "3") (RP: ")", "0") (IF: "if", "0") (expr, "3") (then, "1") (stmt, "5")  opt_else ( 1 ) (stmt, "4")  func_stmt ( 1 )  (error production) (expr1, "2")  rel ( 1 ) (SEMI: ";", "0") 
+(arg, "2") (COMMA: ",", "0") (arg_list, "3") (LP: "(", "0") (expr, "2") (rp, "1") (THEN: "then", "0") (ID: "i", "0") (colon, "1") (ASSIGN: "=", "0") (expr, "2") (semi, "1")  epsilon (WHILE: "while", "0") (expr, "3") (do, "1") (stmt, "3")  epsilon (expr2, "2") (add_sub, "2")  epsilon 
+(datatype, "1") (ID: "i", "0") (arg, "2") (COMMA: ",", "0") (arg_list, "1") (expr1, "2")  rel ( 1 ) (RP: ")", "0") (COLON: ":", "0") (expr1, "2")  rel ( 1 ) (SEMI: ";", "0") (LP: "(", "0") (expr, "2") (rp, "1")  (error production) (BEGIN1: "begin", "0") (opt_stmt_list, "1") (end, "1") (expr3, "1")  mul_div ( 1 ) (MINUS: "-", "0") (expr, "2") 
+(INT: "int", "0") (datatype, "1") (ID: "b", "0") (arg, "2") (expr2, "2")  add_sub ( 1 )  epsilon (expr2, "2")  add_sub ( 1 )  epsilon (expr1, "2") (rel, "2") (RP: ")", "0") (stmt_list, "1")  (error production) (term, "1")  epsilon (expr1, "2")  rel ( 1 ) 
+(BOOL: "bool", "0") (datatype, "1") (ID: "c", "0") (expr3, "1")  mul_div ( 1 )  epsilon (expr3, "1")  mul_div ( 1 )  epsilon (expr2, "2")  add_sub ( 1 ) (operator, "1") (expr, "2") (stmt, "5") (ID: "i", "0") (expr2, "2")  add_sub ( 1 )  epsilon 
+(CHAR: "char", "0") (term, "1")  epsilon (term, "1")  epsilon (expr3, "1")  mul_div ( 1 )  epsilon (GTE: ">=", "0") (expr1, "2")  rel ( 1 ) (ID: "c", "0") (colon, "1") (ASSIGN: "=", "0") (expr, "2") (semi, "1") (expr3, "1")  mul_div ( 1 )  epsilon 
+(ID: "b", "0") (NUM: "5", "0") (term, "1")  epsilon (expr2, "2")  add_sub ( 1 )  epsilon  (error production) (expr1, "2")  rel ( 1 )  (error production) (term, "1")  epsilon 
+(ID: "i", "0") (expr3, "1")  mul_div ( 1 )  epsilon (expr2, "2")  add_sub ( 1 )  epsilon (NUM: "1", "0") 
+(term, "1")  epsilon (expr3, "1")  mul_div ( 1 )  epsilon 
+(NUM: "3", "0") (term, "1")  epsilon 
+(CHARACTER: "'a'", "0") 

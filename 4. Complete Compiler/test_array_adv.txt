@@ -1,0 +1,8 @@
+int arr[10];
+int i;
+i:=0;
+while(i<10) do
+{
+	arr[i]:=i*2;
+	i:=i+1;
+}

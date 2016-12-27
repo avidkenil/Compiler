@@ -1,0 +1,6 @@
+int b;
+int arr[10];
+arr[0]:=3;
+b:=40;
+arr[1]:=b+arr[0];
+arr[2]:=arr[1]*3;

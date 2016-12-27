@@ -1,0 +1,88 @@
+
+G = (N, T, P, S1)
+
+N = { S, }
+T = { }
+
+attributes: 
+
+synthesized:
+        
+        
+inherited:
+
+
+Productions:
+  
+S1 -> S
+S -> func_decl1 S | stmt_list S | func_defn S   | epsilon
+
+func_decl1 -> func_decl ;                       
+func_decl -> datatype id ( opt_arg_list )       /* id.eletype=datatype id.type = function; id.declOrDefn = 0; insert_symtab(id, opt_arg_list.parList ) */
+
+func_type -> void | datatype            /* */
+
+opt_arg_list -> arg_list | epsilon              /* opt_arg_list.parList = arg_list.parList; */
+arg_list -> arg, arg_list | arg                 /* arg. arg_list1.parList = append(arg_list2.parList, arg ); */
+arg -> type id_array               /*id_array.type = type */
+
+func_defn -> func_decl begin func_stmt end         
+
+func_stmt -> stmt func_stmt | return rt  | epsilon  /*      */
+rt -> ( expr )  | expr | epsilon        /*if(rt!=epsilon) rt.val = expr.val; */
+
+stmt_list -> stmt ; stmt_list | stmt ; 
+
+stmt -> id_array := expr ;  |                   /*   if(!coercible(id_array.type,expr.type))
+                                                        error("assignment cannot be done types not matched");
+                                                     else 
+                                                        id_array.value = expr.value;
+                                                                
+                                                                
+                                                                */
+        if expr then stmt opt_else |            /* if(!coercible())
+                                                        */
+        while expr do stmt  |
+        begin   opt_stmt_list end   |
+        var_decl    |
+        func_call       |
+        io
+
+//////////////////////////else
+
+opt_else -> else_stmt | epsilon
+else_stmt -> else opt_stmt_list
+
+////////////////////////
+
+/////////////////////////////////////////////////////
+expr -> expr1 rel   | ( expr )
+rel -> operator expr | epsilon
+operator ->     <= | >= | == | > | <
+
+expr1 -> expr2 add_sub
+add_sub -> + expr | - expr  
+
+expr2 -> expr3 mul_div
+mul_div -> * expr | / expr
+
+expr3 -> ! expr
+/////////////////////////////////////////////////////
+
+opt_stmt_list -> stmt_list | epsilon
+
+var_decl -> datatype id_list;
+id_list -> id_array, id_list | id_array;
+id_array -> id | id[DIMLIST]
+DIMLIST -> expr | expr, DIMLIST
+
+datatype -> int | bool | char | float
+
+//////////////////////////////////////////
+func_call -> id ( opt_expr_list ) ;
+opt_expr_list -> expr_list | epsilon
+expr_list -> expr , expr_list | expr
+
+///////////////////////////////////////////
+io -> cin >> id | cout << id
+

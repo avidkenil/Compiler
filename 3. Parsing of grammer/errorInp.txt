@@ -1,0 +1,7 @@
+begin
+    
+    while(i>=3)
+    do
+   
+    
+end

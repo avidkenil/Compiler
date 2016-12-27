@@ -1,0 +1,23 @@
+char funcName(int i, bool b, char c)
+begin
+    if(b) then
+        i := 5;
+    while(i>=3)
+    do;
+    begin
+        c :+= 'a' =+ i;
+        i := i-1;
+    end
+    return c;
+end
+
+
+int =a;
+a:=4;
+bool b;
+b:= 0;
+char c;
+c:='d';
+
+
+cout << funcName(a, b, c);

@@ -1,0 +1,54 @@
+datatype : INT
+id_array : ID
+id_list : id_array
+var_decl : datatype id_list
+semi : SEMI
+stmt : var_decl semi
+id_array : ID
+colon : COLON
+term : NUM
+expr3 : term
+mul_div : epsilon
+expr2 : expr3 mul_div
+term : NUM
+expr3 : term
+term : NUM
+expr3 : term
+term : NUM
+expr3 : term
+mul_div : epsilon
+expr2 : expr3 mul_div
+term : NUM
+expr3 : term
+mul_div : epsilon
+expr2 : expr3 mul_div
+add_sub : epsilon
+expr1 : expr2 add_sub
+rel : epsilon
+expr : expr1 rel
+add_sub : PLUS expr
+expr1 : expr2 add_sub
+rel : epsilon
+expr : expr1 rel
+mul_div : DIV expr
+expr2 : expr3 mul_div
+add_sub : epsilon
+expr1 : expr2 add_sub
+rel : epsilon
+expr : expr1 rel
+mul_div : TIMES expr
+expr2 : expr3 mul_div
+add_sub : epsilon
+expr1 : expr2 add_sub
+rel : epsilon
+expr : expr1 rel
+add_sub : MINUS expr
+expr1 : expr2 add_sub
+rel : epsilon
+expr : expr1 rel
+semi : SEMI
+stmt : id_array COLON ASSIGN expr semi
+S : epsilon
+S : stmt S
+S : stmt S
+S! : S

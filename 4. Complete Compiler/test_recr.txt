@@ -1,0 +1,14 @@
+int ans;
+ans:=0;
+
+void func()
+{
+	ans:= ans+1;
+	if(ans<5) then
+		func();
+	
+
+}
+
+
+func();

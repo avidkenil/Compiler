@@ -1,0 +1,4 @@
+Entry 0:    a simple int 0 NULL  NULL  NULL 
+Entry 1:    b simple int 0 NULL  NULL  NULL 
+Entry 2:    a simple int 1 NULL  NULL  NULL 
+Entry 3:    b simple int 1 NULL  NULL  NULL 

@@ -1,0 +1,18 @@
+int a;
+a:=4;
+int func1()
+{
+    int a;
+    a := 5;
+    return a;
+}
+
+void func2(int a)
+{
+    int b;
+    b:=9;
+    b := b * a;
+}
+
+func1(a);
+func2(a);

@@ -1,0 +1,2 @@
+1. struct will be made differently for same nonterminal in different productions.
+

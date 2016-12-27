@@ -1,0 +1,20 @@
+term : ID
+expr3 : term
+mul_div : epsilon
+expr2 : expr3 mul_div
+add_sub : epsilon
+expr1 : expr2 add_sub
+operator : GTE
+term : NUM
+expr3 : term
+mul_div : epsilon
+expr2 : expr3 mul_div
+add_sub : epsilon
+expr1 : expr2 add_sub
+rel : epsilon
+expr : expr1 rel
+rel : operator expr
+expr : expr1 rel
+rp : RP
+expr : LP expr rp
+do : DO

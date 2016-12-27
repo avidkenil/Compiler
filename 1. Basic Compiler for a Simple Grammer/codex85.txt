@@ -1,0 +1,41 @@
+  ;    t0 := 2 
+
+MVI A, 02H
+
+STA 02B0H
+  ;    t1 := 3 
+
+MVI A, 03H
+
+STA 02B1H
+  ;    t2 := 4 
+
+MVI A, 04H
+
+STA 02B2H
+  ;     t1 += t2 
+
+LXI H, 02B2H
+MOV B, M
+LXI H, 02B1H
+MOV A, M
+ADD B
+STA 02B1H
+  ;     t0 <= t1 
+
+LXI H, 02B1H
+MOV B, M
+LXI H, 02B0H
+MOV A, M
+SUB B
+MVI A, 00H
+JP 002EH
+JZ 002EH
+MVI A, 01H
+STA 02B0H
+  ;	_a := t0 
+
+LXI H, 02B0H
+MOV A, M
+STA 02C0H
+HLT

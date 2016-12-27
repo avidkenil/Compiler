@@ -1,0 +1,21 @@
+main:
+li $sp, 2147479548
+move $fp, $sp
+addi $sp,$sp,-4
+addi $sp,$sp,-4
+li $a0, 3
+move $t0, $fp
+addi $t0, $t0, 0
+sw $a0, ($t0)
+addi $sp,$sp,-4
+addi $sp,$sp,-4
+li $a0, 5
+move $t0, $fp
+addi $t0, $t0, -8
+sw $a0, ($t0)
+li $a0, 10
+move $t0, $fp
+addi $t0, $t0, 0
+sw $a0, ($t0)
+li $v0, 10
+syscall

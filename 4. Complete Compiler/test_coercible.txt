@@ -1,0 +1,8 @@
+bool b;
+char c;
+b := 1;
+
+char t;
+t:='a';
+
+b:=t+t;

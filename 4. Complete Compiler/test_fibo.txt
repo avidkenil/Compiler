@@ -1,0 +1,14 @@
+
+int fibo(int n)
+{
+	int ans;
+	if(n<=1) then
+		ans:=1;
+	else
+		ans := fibo(n-1) + fibo(n-2);
+	
+	return ans;
+}
+
+int t;
+t:=fibo(5);

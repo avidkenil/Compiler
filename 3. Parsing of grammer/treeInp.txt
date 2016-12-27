@@ -1,0 +1,97 @@
+datatype : CHAR
+datatype : INT
+arg : datatype ID
+datatype : BOOL
+arg : datatype ID
+datatype : CHAR
+arg : datatype ID
+arg_list : arg
+arg_list : arg COMMA arg_list
+arg_list : arg COMMA arg_list
+opt_arg_list : arg_list
+rp : RP
+func_decl : func_type ID LP opt_arg_list rp
+term : ID
+expr3 : term
+mul_div : epsilon
+expr2 : expr3 mul_div
+add_sub : epsilon
+expr1 : expr2 add_sub
+rel : epsilon
+expr : expr1 rel
+rp : RP
+expr : LP expr rp
+then : THEN
+colon : COLON
+term : NUM
+expr3 : term
+mul_div : epsilon
+expr2 : expr3 mul_div
+add_sub : epsilon
+expr1 : expr2 add_sub
+rel : epsilon
+expr : expr1 rel
+semi : SEMI
+stmt : ID COLON ASSIGN expr semi
+opt_else : epsilon
+stmt : IF expr then stmt opt_else
+term : ID
+expr3 : term
+mul_div : epsilon
+expr2 : expr3 mul_div
+add_sub : epsilon
+expr1 : expr2 add_sub
+operator : GTE
+term : NUM
+expr3 : term
+mul_div : epsilon
+expr2 : expr3 mul_div
+add_sub : epsilon
+expr1 : expr2 add_sub
+rel : epsilon
+expr : expr1 rel
+rel : operator expr
+expr : expr1 rel
+rp : RP
+expr : LP expr rp
+do : DO
+colon : COLON
+term : CHARACTER
+expr3 : term
+mul_div : epsilon
+expr2 : expr3 mul_div
+add_sub : epsilon
+expr1 : expr2 add_sub
+rel : epsilon
+expr : expr1 rel
+stmt : ID COLON ASSIGN expr semi
+stmt_list : stmt
+opt_stmt_list : stmt_list
+stmt : BEGIN1  opt_stmt_list end
+stmt : WHILE expr do stmt
+func_stmt : epsilon
+func_stmt : stmt func_stmt
+func_stmt : stmt func_stmt
+func_defn : func_decl BEGIN1 func_stmt end
+term : ID
+expr3 : term
+mul_div : epsilon
+expr2 : expr3 mul_div
+term : NUM
+expr3 : term
+mul_div : epsilon
+expr2 : expr3 mul_div
+add_sub : epsilon
+expr1 : expr2 add_sub
+rel : epsilon
+expr : expr1 rel
+add_sub : MINUS expr
+expr1 : expr2 add_sub
+rel : epsilon
+expr : expr1 rel
+semi : SEMI
+stmt : ID COLON ASSIGN expr semi
+S : epsilon
+S : stmt S
+S : func_defn S
+S1 : S
